@@ -28,10 +28,6 @@ schema = StructType([
 
 df = spark.createDataFrame(data, schema)
 
-# =======================================================
-# 3) GUARDAR BRONZE
-# =======================================================
-
 df.write.mode("overwrite").parquet("bronze/documents")
 df.show()
 
